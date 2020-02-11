@@ -1,4 +1,5 @@
 function getUsers() {
+	console.log('test');
 	  var xmlUsers = new XMLHttpRequest();
 	  xmlUsers.onreadystatechange = function() {
 	      if (this.readyState == 4 && this.status == 200) {
@@ -14,11 +15,12 @@ function getUsers() {
 	          document.getElementById("results").innerHTML = data;
 	      }
 	  }
-	  xmlUsers.open("GET", "http://localhost/io_exb/controller/get_users.php");
+	  xmlUsers.open("GET", "http://localhost/io_exb/io_exb/controller/get_users.php");
 	  xmlUsers.send();
 	}
 
 	function getUser() {
+		console.log('test');
 	  var id=document.getElementById('userid').value;
 	  console.log("id=",id);
 	  var xmlUsers = new XMLHttpRequest();
@@ -34,13 +36,13 @@ function getUsers() {
 	          document.getElementById("results").innerHTML = data;
 	      }
 	  }
-	  xmlUsers.open("GET", "http://localhost/io_exb/controller/get_user.php?id="+id);
+	  xmlUsers.open("GET", "http://localhost/io_exb/io_exb/controller/get_user.php?id="+id);
 	  xmlUsers.send();
 	}
 
 	function addUser() {
 	  var url =
-	    'http://localhost/io_exb/controller/add_user.php';
+	    'http://localhost/io_exb/io_exb/controller/add_user.php';
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.open('POST', url, true);
 	  var form = document.getElementById('addForm');
@@ -74,13 +76,13 @@ function getUsers() {
 	        document.getElementById('results').innerHTML = 'Something went wrong';
 	      }
 	  }
-	  xmlUsers.open("GET", "http://localhost/io_exb/controller/get_user.php?id="+id);
+	  xmlUsers.open("GET", "http://localhost/io_exb/io_exb/controller/get_user.php?id="+id);
 	  xmlUsers.send();
 	}
 
 	function updateUser() {
 	  var url =
-	    'http://localhost/io_exb/controller/update_user.php';
+	    'http://localhost/io_exb/io_exb/controller/update_user.php';
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.open('POST', url, true);
 	  var form = document.getElementById('updateForm');
@@ -107,6 +109,6 @@ function getUsers() {
 	        document.getElementById('results').innerHTML = 'Something went wrong';
 	      }
 	  }
-	  xmlUsers.open("GET", "http://localhost/io_exb/controller/delete_user.php?id="+id);
+	  xmlUsers.open("GET", "http://localhost/io_exb/io_exb/controller/delete_user.php?id="+id);
 	  xmlUsers.send();
 	}
